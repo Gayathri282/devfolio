@@ -22,11 +22,21 @@ Open [http://localhost:9002](http://localhost:9002) with your browser to see the
 
 *   **Next.js App Router:** For modern, performant React applications.
 *   **Tailwind CSS & ShadCN UI:** For beautiful and responsive styling.
-*   **Server Actions:** The contact form uses a server action to process submissions.
+*   **Formspree Integration:** The contact form is ready to be connected to the Formspree service.
+
+## Setting up the Contact Form
+
+The contact form is powered by [Formspree](https://formspree.io/), which provides a simple way to receive email notifications from your form without any backend code.
+
+1.  **Create a Formspree Account:** If you don't have one, sign up for a free account at [formspree.io](https://formspree.io/).
+2.  **Create a New Form:** From your Formspree dashboard, create a new form and get your unique endpoint URL. It will look something like `https://formspree.io/f/xxxxxxxx`.
+3.  **Update the Code:** Open the file `src/app/contact/contact-form.tsx` and replace the placeholder `https://formspree.io/f/YOUR_FORMSPREE_CODE` with your actual Formspree endpoint URL.
+
+That's it! Your form will now send submissions directly to your email.
 
 ## Deployment
 
-This project is a **dynamic Next.js application**. For all its features to work, it needs to be deployed to a hosting provider that supports Node.js environments.
+This project is ready for deployment on any static or Next.js hosting provider.
 
 ### Recommended: Vercel (Free)
 
@@ -43,12 +53,6 @@ This project can be easily deployed with **Vercel**, a platform from the creator
 
 3.  **Deploy:**
     Click the "Deploy" button. Your site will be built and deployed. Vercel will provide you with a URL to your live site.
-
-### Extending the Contact Form
-
-Currently, the contact form logs submissions to the server console. On Vercel, you can view these logs in the project's "Logs" tab.
-
-To receive emails, you can integrate a service like [Resend](https://resend.com/) or [Nodemailer](https://nodemailer.com/). You would typically add the email sending logic to the `sendEmail` server action in `src/app/contact/actions.ts` and set up any required API keys as environment variables on Vercel.
 
 ---
 *This project was bootstraed with Firebase Studio.*
