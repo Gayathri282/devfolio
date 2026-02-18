@@ -26,9 +26,7 @@ const contactSchema = z.object({
 
 type ContactFormValues = z.infer<typeof contactSchema>;
 
-// IMPORTANT: Replace this with your own Formspree endpoint.
-// For more info, see the updated README.md.
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORMSPREE_CODE";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mrealeae";
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -44,15 +42,6 @@ export function ContactForm() {
   });
 
   const onSubmit = async (data: ContactFormValues) => {
-    if (FORMSPREE_ENDPOINT === "https://formspree.io/f/YOUR_FORMSPREE_CODE") {
-      toast({
-        title: 'Configuration Needed',
-        description: 'Please replace the placeholder Formspree endpoint in src/app/contact/contact-form.tsx.',
-        variant: 'destructive',
-      });
-      return;
-    }
-
     setIsSubmitting(true);
     try {
       const response = await fetch(FORMSPREE_ENDPOINT, {
