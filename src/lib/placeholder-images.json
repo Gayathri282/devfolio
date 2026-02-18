@@ -1,3 +1,34 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-image",
+      "description": "Abstract representation of code on a screen",
+      "imageUrl": "https://images.unsplash.com/photo-1555680510-34daedadbdb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29kZSUyMGFic3RyYWN0fGVufDB8fHx8MTc3MTM5MjYyMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "code abstract"
+    },
+    {
+      "id": "about-me-image",
+      "description": "Portrait of a developer at their workspace",
+      "imageUrl": "https://images.unsplash.com/photo-1660810731526-0720827cbd38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkZXZlbG9wZXIlMjB3b3Jrc3BhY2V8ZW58MHx8fHwxNzcxNDEwMzg3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "developer workspace"
+    },
+    {
+      "id": "project-1",
+      "description": "Screenshot of a modern web application dashboard",
+      "imageUrl": "https://images.unsplash.com/photo-1592318054338-9074a4968e2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkYXNoYm9hcmQlMjB1aXxlbnwwfHx8fDE3NzEzOTU2OTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dashboard ui"
+    },
+    {
+      "id": "project-2",
+      "description": "Screenshot of an e-commerce website product page",
+      "imageUrl": "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxlY29tbWVyY2UlMjB3ZWJzaXRlfGVufDB8fHx8MTc3MTM5NDc4MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ecommerce website"
+    },
+    {
+      "id": "project-3",
+      "description": "Screenshot of a mobile-responsive blog layout",
+      "imageUrl": "https://images.unsplash.com/photo-1657256031790-e898b7b3f3eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxibG9nJTIwbGF5b3V0fGVufDB8fHx8MTc3MTQxMDM4N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "blog layout"
+    }
+  ]
 }
