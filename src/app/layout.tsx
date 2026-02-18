@@ -3,7 +3,6 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 
 export const metadata: Metadata = {
   title: {
@@ -28,16 +27,14 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
-        <FirebaseClientProvider>
-          <div className="flex min-h-screen flex-col">
-            <Header />
-            <main className="flex-grow container mx-auto px-4 py-12 sm:px-6 lg:px-8">
-              {children}
-            </main>
-            <Footer />
-          </div>
-          <Toaster />
-        </FirebaseClientProvider>
+        <div className="flex min-h-screen flex-col">
+          <Header />
+          <main className="flex-grow container mx-auto px-4 py-12 sm:px-6 lg:px-8">
+            {children}
+          </main>
+          <Footer />
+        </div>
+        <Toaster />
       </body>
     </html>
   );

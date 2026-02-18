@@ -1,5 +1,4 @@
 import type { LucideIcon } from "lucide-react";
-import { Timestamp } from "firebase/firestore";
 
 export type Project = {
   id: string;
@@ -24,11 +23,3 @@ export type GithubRepo = {
   stars: number;
   forks: number;
 };
-
-export type ContactMessage = {
-  id: string;
-  name: string;
-  email: string;
-  message: string;
-  createdAt: Timestamp;
-}

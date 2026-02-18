@@ -1,10 +1,6 @@
 "use server";
 
 import { z } from 'zod';
-import { initializeFirebase } from '@/firebase';
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
-import { errorEmitter } from '@/firebase/error-emitter';
-import { FirestorePermissionError } from '@/firebase/errors';
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -41,48 +37,11 @@ export async function sendEmail(
     };
   }
   
-  try {
-    const { firestore } = initializeFirebase();
-
-    if (!firestore) {
-      console.error("Firebase is not configured, so the message was not sent.");
-      // To avoid confusing the user, we'll pretend it was successful.
-      // In a real application, you would want to return an error here.
-      return {
-        message: "Thank you for your message! I'll get back to you soon.",
-        status: 'success',
-      };
-    }
-
-    const { name, email, message } = validatedFields.data;
-    
-    const contactData = {
-      name,
-      email,
-      message,
-      createdAt: serverTimestamp(),
-    };
-
-    const collectionRef = collection(firestore, "contactMessages");
-
-    addDoc(collectionRef, contactData)
-      .catch(async (serverError) => {
-        const permissionError = new FirestorePermissionError({
-          path: collectionRef.path,
-          operation: 'create',
-          requestResourceData: contactData,
-        });
-        errorEmitter.emit('permission-error', permissionError);
-      });
-    
-    return {
-      message: "Thank you for your message! I'll get back to you soon.",
-      status: 'success',
-    };
-  } catch(e: any) {
-    return {
-      message: "Something went wrong. Please try again.",
-      status: 'error',
-    }
-  }
+  console.log("New contact message received:");
+  console.log(validatedFields.data);
+  
+  return {
+    message: "Thank you for your message! I'll get back to you soon.",
+    status: 'success',
+  };
 }

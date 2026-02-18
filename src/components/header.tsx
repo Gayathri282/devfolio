@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Code, Menu, X, Inbox } from 'lucide-react';
+import { Code, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -12,7 +12,6 @@ const navLinks = [
   { href: '/projects', label: 'Projects' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
-  { href: '/inbox', label: 'Inbox' },
 ];
 
 export function Header() {
@@ -40,7 +39,7 @@ export function Header() {
                   pathname === link.href ? 'text-primary' : 'text-foreground/60'
                 )}
               >
-                {link.href === '/inbox' ? <Inbox className="w-5 h-5" /> : link.label}
+                {link.label}
               </Link>
             ))}
           </nav>

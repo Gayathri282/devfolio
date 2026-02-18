@@ -1,41 +1,7 @@
 {
-  "entities": {
-    "contactMessage": {
-      "title": "Contact Message",
-      "description": "A message submitted through the contact form.",
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "The name of the person sending the message."
-        },
-        "email": {
-          "type": "string",
-          "format": "email",
-          "description": "The email address of the sender."
-        },
-        "message": {
-          "type": "string",
-          "description": "The content of the message."
-        },
-        "createdAt": {
-          "type": "string",
-          "format": "date-time",
-          "description": "The timestamp when the message was created."
-        }
-      },
-      "required": ["name", "email", "message", "createdAt"]
-    }
-  },
+  "entities": {},
   "auth": {
     "providers": []
   },
-  "firestore": {
-    "/contactMessages/{messageId}": {
-      "schema": {
-        "$ref": "#/entities/contactMessage"
-      },
-      "description": "Collection of messages from the contact form."
-    }
-  }
+  "firestore": {}
 }

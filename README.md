@@ -1,6 +1,6 @@
 # Devfolio - A Next.js Portfolio
 
-This is a Next.js portfolio website built with Firebase Studio. It features a modern design, project showcases, a contact form, and a private inbox to view messages.
+This is a Next.js portfolio website built with Firebase Studio. It features a modern design, project showcases, and a contact form.
 
 ## Getting Started
 
@@ -22,48 +22,33 @@ Open [http://localhost:9002](http://localhost:9002) with your browser to see the
 
 *   **Next.js App Router:** For modern, performant React applications.
 *   **Tailwind CSS & ShadCN UI:** For beautiful and responsive styling.
-*   **Firebase Firestore:** To store messages from the contact form. This is a dynamic, server-side feature.
-*   **Firebase App Hosting:** For easy and free deployment.
+*   **Server Actions:** The contact form uses a server action to process submissions.
 
 ## Deployment
 
-This project is a **dynamic Next.js application**, which means it uses server-side features (like the contact form). For these features to work, it needs to be deployed to a hosting provider that supports Node.js environments.
+This project is a **dynamic Next.js application**. For all its features to work, it needs to be deployed to a hosting provider that supports Node.js environments.
 
-### Recommended: Firebase App Hosting (Free)
+### Recommended: Vercel (Free)
 
-This project is pre-configured for deployment on **Firebase App Hosting**, which is a free and robust option for hosting dynamic Next.js apps. When you deploy to Firebase, your contact form will work correctly.
+This project can be easily deployed with **Vercel**, a platform from the creators of Next.js that is optimized for Next.js applications and offers a generous free tier.
 
-#### From Firebase Studio
-If you are working within Firebase Studio, you can typically deploy your application directly from the interface. Look for a "Deploy" or "Publish" button.
+1.  **Push to GitHub:**
+    Create a new repository on your GitHub account and push the project code to it.
 
-#### Using the Firebase CLI
+2.  **Import Project on Vercel:**
+    - Go to your [Vercel dashboard](https://vercel.com/dashboard).
+    - Click the "Add New..." button and select "Project".
+    - Import your GitHub repository.
+    - Vercel will automatically detect that it's a Next.js project and configure the build settings.
 
-If you have your project on your local machine, you can deploy using the Firebase Command Line Interface (CLI).
+3.  **Deploy:**
+    Click the "Deploy" button. Your site will be built and deployed. Vercel will provide you with a URL to your live site.
 
-1.  **Install the Firebase CLI:**
-    If you don't have it installed, run:
-    ```bash
-    npm install -g firebase-tools
-    ```
+### Extending the Contact Form
 
-2.  **Login to Firebase:**
-    ```bash
-    firebase login
-    ```
+Currently, the contact form logs submissions to the server console. On Vercel, you can view these logs in the project's "Logs" tab.
 
-3.  **Deploy the application:**
-    In your project root directory, run:
-    ```bash
-    firebase deploy --only appHosting
-    ```
-
-### Hosting on GitHub Pages (Not Recommended)
-
-While you can store your code on GitHub, using **GitHub Pages** for hosting this project is **not recommended**.
-
-GitHub Pages is designed for **static websites**. Because this is a dynamic Next.js application, critical features like the **contact form will not work** if you deploy to GitHub Pages. It requires a server environment to process form submissions and save them to the database.
-
-For all features of your portfolio to work as intended, please use a hosting service designed for dynamic applications, like the recommended Firebase App Hosting.
+To receive emails, you can integrate a service like [Resend](https://resend.com/) or [Nodemailer](https://nodemailer.com/). You would typically add the email sending logic to the `sendEmail` server action in `src/app/contact/actions.ts` and set up any required API keys as environment variables on Vercel.
 
 ---
 *This project was bootstraed with Firebase Studio.*
