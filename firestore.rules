@@ -1,0 +1,18 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Disallow all reads and writes by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Allow anyone to submit a contact message
+    // and allow anyone to read them for the inbox page.
+    // In a real app, you'd want to restrict read access.
+    match /contactMessages/{messageId} {
+      allow create: if true;
+      allow read: if true; 
+    }
+  }
+}
